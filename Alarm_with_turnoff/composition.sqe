@@ -1,0 +1,294 @@
+version=54;
+center[]={4846.1025,122.52698,5484.5347};
+class items
+{
+	items=8;
+	class Item0
+	{
+		dataType="Trigger";
+		position[]={-0.68945313,0.99192047,-0.25488281};
+		class Attributes
+		{
+			onActivation="[thisTrigger] spawn " \n "{ " \n " params [""_trigger""];" \n " _alarm = createSoundSource [""Sound_Alarm"", position _trigger, [], 0];  " \n " _countdown = 300;" \n " waitUntil { " \n "   sleep 1;" \n "   _countdown = _countdown - 1;" \n "" \n "  _suppress = true in ((synchronizedObjects _trigger) apply { _x getVariable [""STOP_ALARM"",false] }); " \n "  _countdown <= 0 || _suppress };" \n " " \n " deleteVehicle _alarm;};";
+			sizeA=5;
+			sizeB=5;
+			sizeC=5;
+			activationBy="ANYPLAYER";
+			isRectangle=1;
+			isServerOnly=1;
+		};
+		id=0;
+		type="EmptyDetectorArea10x10";
+	};
+	class Item1
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-5.2426758,4.4867325,-4.7587891};
+		};
+		side="Empty";
+		flags=5;
+		class Attributes
+		{
+		};
+		id=1;
+		type="FlagPole_F";
+		atlOffset=0.00073242188;
+	};
+	class Item2
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={4.0561523,5.9230957,-5.3588867};
+		};
+		side="Empty";
+		flags=5;
+		class Attributes
+		{
+		};
+		id=2;
+		type="FlagPole_F";
+		atlOffset=0.00073242188;
+	};
+	class Item3
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={4.4267578,5.8257446,4.706543};
+		};
+		side="Empty";
+		flags=5;
+		class Attributes
+		{
+		};
+		id=3;
+		type="FlagPole_F";
+		atlOffset=0.00073242188;
+	};
+	class Item4
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-5.8193359,3.9768066,4.9067383};
+		};
+		side="Empty";
+		flags=5;
+		class Attributes
+		{
+		};
+		id=4;
+		type="FlagPole_F";
+		atlOffset=0.00073242188;
+	};
+	class Item5
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={1.9960938,2.1702118,-0.6328125};
+		};
+		side="Empty";
+		class Attributes
+		{
+			disableSimulation=1;
+		};
+		id=15;
+		type="Land_Computer_01_olive_F";
+		atlOffset=0.086906433;
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="ENH_HoldAction";
+				expression="            _value params ['_name', '_iconIdle', '_iconProgress', '_conditionShow', '_conditionProgress', '_codeStart', '_codeProgress', '_codeCompletion', '_codeInterrupt', '_duration', '_priority', '_showUnconscious', '_showWindow'];            if (!is3DEN && (_name != '')) then            {                [                    _this,                    _name,                    _iconIdle,                    _iconProgress,                    _conditionShow,                    _conditionProgress,                    compile _codeStart,                    compile _codeProgress,                    compile format ['%1 %2', '[_this select 0, _this select 2] remoteExecCall [''removeAction'', 0]; remoteExecCall ['''', _this select 0];', _codeCompletion],                    compile _codeInterrupt,                    nil,                    _duration,                    _priority,                    true,                    _showUnconscious,                    _showWindow                ] remoteExecCall ['BIS_fnc_holdActionAdd', 0, _this];            };";
+				class Value
+				{
+					class data
+					{
+						singleType="ARRAY";
+						class value
+						{
+							items=13;
+							class Item0
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Disable alarm";
+								};
+							};
+							class Item1
+							{
+								class data
+								{
+									singleType="STRING";
+									value="\a3\ui_f_oldman\data\IGUI\Cfg\holdactions\destroy_ca.paa";
+								};
+							};
+							class Item2
+							{
+								class data
+								{
+									singleType="STRING";
+									value="\a3\ui_f_oldman\data\IGUI\Cfg\holdactions\destroy_ca.paa";
+								};
+							};
+							class Item3
+							{
+								class data
+								{
+									singleType="STRING";
+									value="true";
+								};
+							};
+							class Item4
+							{
+								class data
+								{
+									singleType="STRING";
+									value="true";
+								};
+							};
+							class Item5
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+							class Item6
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+							class Item7
+							{
+								class data
+								{
+									singleType="STRING";
+									value="_target setVariable [""STOP_ALARM"",true]";
+								};
+							};
+							class Item8
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+							class Item9
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=10;
+								};
+							};
+							class Item10
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1000;
+								};
+							};
+							class Item11
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=0;
+								};
+							};
+							class Item12
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="allowDamage";
+				expression="_this allowdamage _value;";
+				class Value
+				{
+					class data
+					{
+						singleType="BOOL";
+						value=0;
+					};
+				};
+			};
+			nAttributes=2;
+		};
+	};
+	class Item6
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-0.81201172,4.4039307,2.0693359};
+		};
+		side="Empty";
+		flags=5;
+		class Attributes
+		{
+		};
+		id=16;
+		type="Land_Loudspeakers_F";
+		atlOffset=-7.6293945e-06;
+	};
+	class Item7
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={2.0209961,1.7703476,-0.67529297};
+			angles[]={0.0050033992,0,0.20938492};
+		};
+		side="Empty";
+		flags=4;
+		class Attributes
+		{
+		};
+		id=18;
+		type="ACE_Box_Ammo";
+		atlOffset=-3.0517578e-05;
+	};
+};
+class connections
+{
+	class LinkIDProvider
+	{
+		nextID=1;
+	};
+	class Links
+	{
+		items=1;
+		class Item0
+		{
+			linkID=0;
+			item0=0;
+			item1=15;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+	};
+};
