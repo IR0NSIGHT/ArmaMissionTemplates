@@ -1,0 +1,241 @@
+version=54;
+center[]={3837.5088,45.464336,7297.0459};
+class items
+{
+	items=3;
+	class Item0
+	{
+		dataType="Trigger";
+		position[]={0.13525391,1.2455673,-0.95166016};
+		class Attributes
+		{
+			condition="this && !(thisTrigger getVariable [""stop"",false]);";
+			onActivation="[thisTrigger] spawn " \n "{ " \n " params [""_trigger""]; " \n " for ""_i"" from 0 to 40 step 6.5 do {" \n "   playSound3D [""A3\Sounds_F\sfx\alarm_independent.wss"", _trigger] ;" \n "   sleep 6.5;" \n "};" \n "};" \n "";
+			sizeA=5;
+			sizeB=5;
+			sizeC=5;
+			activationBy="ANYPLAYER";
+			isRectangle=1;
+			isServerOnly=1;
+		};
+		id=49;
+		type="EmptyDetectorArea10x10";
+	};
+	class Item1
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={-2.1787109,1.1291313,-1.5087891};
+			angles[]={0.16838937,0,0.067404613};
+		};
+		id=50;
+		type="IRN_Module_Artillery";
+		atlOffset=-3.8146973e-06;
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="irn_amb_artillery_movingDistance";
+				expression="_this setVariable ['movingDistance',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=0;
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="irn_amb_artillery_radius";
+				expression="_this setVariable ['radius',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=200;
+					};
+				};
+			};
+			class Attribute2
+			{
+				property="irn_amb_artillery_duration";
+				expression="_this setVariable ['duration',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=30;
+					};
+				};
+			};
+			class Attribute3
+			{
+				property="irn_amb_artillery_intensity";
+				expression="_this setVariable ['intensity',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=2;
+					};
+				};
+			};
+			class Attribute4
+			{
+				property="irn_amb_artillery_ammo";
+				expression="_this setVariable ['ammo',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=5;
+					};
+				};
+			};
+			nAttributes=5;
+		};
+	};
+	class Item2
+	{
+		dataType="Layer";
+		name="Camp Audacity";
+		class Entities
+		{
+			items=6;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={2.6013184,2.8662643,-1.8994141};
+					angles[]={0.15865479,4.7535181,0.12681535};
+				};
+				side="Empty";
+				flags=4;
+				class Attributes
+				{
+					skill=0.35000002;
+				};
+				id=69;
+				type="Land_HBarrierBig_F";
+			};
+			class Item1
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-4.0092773,1.9637947,-2.7758789};
+					angles[]={0.17809233,4.7365532,0.057437535};
+				};
+				side="Empty";
+				flags=4;
+				class Attributes
+				{
+					skill=0.35000002;
+				};
+				id=70;
+				type="Land_HBarrier_5_F";
+			};
+			class Item2
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-0.67016602,2.6584549,-5.3735352};
+					angles[]={0.19499066,3.2075489,0.092237078};
+				};
+				side="Empty";
+				flags=4;
+				class Attributes
+				{
+					skill=0.35000002;
+				};
+				id=72;
+				type="Land_HBarrier_5_F";
+				atlOffset=-3.8146973e-06;
+			};
+			class Item3
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-3.010498,1.0757065,2.4814453};
+					angles[]={0.19499098,5.2872143,0.042475242};
+				};
+				side="Empty";
+				flags=4;
+				class Attributes
+				{
+					skill=0.35000002;
+				};
+				id=73;
+				type="Land_HBarrier_5_F";
+				atlOffset=3.8146973e-06;
+			};
+			class Item4
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={5.7282715,1.593502,4.3833008};
+					angles[]={0.23081155,3.8745298,0.13909654};
+				};
+				side="Empty";
+				flags=4;
+				class Attributes
+				{
+					skill=0.35000002;
+				};
+				id=113;
+				type="Land_HBarrier_5_F";
+			};
+			class Item5
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={1.40625,0.74051285,5.6459961};
+					angles[]={0.23081259,2.5640779,0.094715387};
+				};
+				side="Empty";
+				flags=4;
+				class Attributes
+				{
+					skill=0.35000002;
+				};
+				id=114;
+				type="Land_HBarrier_5_F";
+			};
+		};
+		id=112;
+		atlOffset=1.9841118;
+	};
+};
+class connections
+{
+	class LinkIDProvider
+	{
+		nextID=1;
+	};
+	class Links
+	{
+		items=1;
+		class Item0
+		{
+			linkID=0;
+			item0=49;
+			item1=50;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+	};
+};

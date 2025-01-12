@@ -1,0 +1,9 @@
+version=54;
+name="Mortar_attack_with_alarm";
+author="IR0NSIGHT";
+category="EdSubcat_Default";
+requiredAddons[]=
+{
+	"irn_ambientmodules",
+	"A3_Structures_F_Mil_Fortification"
+};
