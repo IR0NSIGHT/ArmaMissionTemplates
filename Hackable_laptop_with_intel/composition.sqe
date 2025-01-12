@@ -1,0 +1,504 @@
+version=54;
+center[]={3822.4285,41.196987,7320.1812};
+class items
+{
+	items=8;
+	class Item0
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={0.27856445,1.1442909,-0.36523438};
+			angles[]={0.16595918,0,0.059928458};
+		};
+		side="Empty";
+		flags=4;
+		class Attributes
+		{
+		};
+		id=24;
+		type="Land_CampingTable_F";
+	};
+	class Item1
+	{
+		dataType="Group";
+		side="West";
+		class Entities
+		{
+			items=1;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-0.55249023,1.0243835,-2.3681641};
+				};
+				side="West";
+				flags=7;
+				class Attributes
+				{
+					init="this setVariable [""isHacker"",true, true];";
+					description="Slicer";
+					isPlayer=1;
+				};
+				id=26;
+				type="B_soldier_AAR_F";
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="STRING";
+								value="Male03ENG";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=0.98000002;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+		};
+		class Attributes
+		{
+		};
+		id=25;
+	};
+	class Item2
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-0.26953125,1.7975197,-0.41601563};
+			angles[]={0.1635199,0,0.0075049158};
+		};
+		side="Empty";
+		class Attributes
+		{
+			init="this setVariable [""hacked"", false];";
+		};
+		id=40;
+		type="Item_Laptop_Unfolded";
+		atlOffset=0.8279953;
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="ENH_HoldAction";
+				expression="            _value params ['_name', '_iconIdle', '_iconProgress', '_conditionShow', '_conditionProgress', '_codeStart', '_codeProgress', '_codeCompletion', '_codeInterrupt', '_duration', '_priority', '_showUnconscious', '_showWindow'];            if (!is3DEN && (_name != '')) then            {                [                    _this,                    _name,                    _iconIdle,                    _iconProgress,                    _conditionShow,                    _conditionProgress,                    compile _codeStart,                    compile _codeProgress,                    compile format ['%1 %2', '[_this select 0, _this select 2] remoteExecCall [''removeAction'', 0]; remoteExecCall ['''', _this select 0];', _codeCompletion],                    compile _codeInterrupt,                    nil,                    _duration,                    _priority,                    true,                    _showUnconscious,                    _showWindow                ] remoteExecCall ['BIS_fnc_holdActionAdd', 0, _this];            };";
+				class Value
+				{
+					class data
+					{
+						singleType="ARRAY";
+						class value
+						{
+							items=13;
+							class Item0
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Use Laptop";
+								};
+							};
+							class Item1
+							{
+								class data
+								{
+									singleType="STRING";
+									value="\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_revive_ca.paa";
+								};
+							};
+							class Item2
+							{
+								class data
+								{
+									singleType="STRING";
+									value="\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_revive_ca.paa";
+								};
+							};
+							class Item3
+							{
+								class data
+								{
+									singleType="STRING";
+									value="_this getVariable [""isHacker"",true];";
+								};
+							};
+							class Item4
+							{
+								class data
+								{
+									singleType="STRING";
+									value="true";
+								};
+							};
+							class Item5
+							{
+								class data
+								{
+									singleType="STRING";
+									value="hint ""slicing in progress..."";" \n "sleep 1;";
+								};
+							};
+							class Item6
+							{
+								class data
+								{
+									singleType="STRING";
+									value="_a = [];  _a resize 10; " \n "_a = (_a apply { round(65 + random 26); } apply { (toString [_x] + str round(random 100))}); " \n "_a = _a joinString """"; hintSilent  _a;";
+								};
+							};
+							class Item7
+							{
+								class data
+								{
+									singleType="STRING";
+									value="_target setVariable [""hacked"", true, true];" \n "hint ""slicing complete"";" \n "[_caller, ""I'm in.""] remoteExec [""sideChat""];";
+								};
+							};
+							class Item8
+							{
+								class data
+								{
+									singleType="STRING";
+									value="hint ""slicing failed..."";";
+								};
+							};
+							class Item9
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=10;
+								};
+							};
+							class Item10
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1000;
+								};
+							};
+							class Item11
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=0;
+								};
+							};
+							class Item12
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+					};
+				};
+			};
+			nAttributes=1;
+		};
+	};
+	class Item3
+	{
+		dataType="Trigger";
+		position[]={-1.6704102,0,3.4487305};
+		class Attributes
+		{
+			condition="true in ((synchronizedObjects thisTrigger) apply { _x getVariable [""hacked"", false]; })";
+			sizeA=0;
+			sizeB=0;
+			isServerOnly=1;
+		};
+		id=41;
+		type="EmptyDetector";
+	};
+	class Item4
+	{
+		dataType="Group";
+		side="West";
+		class Entities
+		{
+			items=1;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={1.1674805,1.133297,-2.418457};
+				};
+				side="West";
+				flags=7;
+				class Attributes
+				{
+					description="Rifleman";
+					isPlayable=1;
+				};
+				id=43;
+				type="B_soldier_AAR_F";
+				atlOffset=-3.8146973e-06;
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="STRING";
+								value="Male03ENG";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								singleType="SCALAR";
+								value=0.98000002;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+		};
+		class Attributes
+		{
+		};
+		id=42;
+		atlOffset=-3.8146973e-06;
+	};
+	class Item5
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={0.28271484,0.20084381,2.7753906};
+		};
+		id=44;
+		type="ModuleCreateDiaryRecord_F";
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="ModuleCreateDiaryRecord_F_PresetTitle";
+				expression="_this setVariable ['PresetTitle',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="Situation";
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="ModuleCreateDiaryRecord_F_Title";
+				expression="_this setVariable ['Title',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="Hackerman";
+					};
+				};
+			};
+			class Attribute2
+			{
+				property="ModuleCreateDiaryRecord_F_Description";
+				expression="_this setVariable ['Description',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="SDJTJKLDBIUQ;ÖSIIOBHJKDFJHKOIOOQWIETPSDHLKKAVBCNMVCJKSDJKLWTJKUIHOGVSDK";
+					};
+				};
+			};
+			class Attribute3
+			{
+				property="ModuleCreateDiaryRecord_F_Owner";
+				expression="_this setVariable ['Owner',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="SCALAR";
+						value=3;
+					};
+				};
+			};
+			class Attribute4
+			{
+				property="ModuleCreateDiaryRecord_F_Subject";
+				expression="_this setVariable ['Subject',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="";
+					};
+				};
+			};
+			nAttributes=5;
+		};
+	};
+	class Item6
+	{
+		dataType="Logic";
+		class PositionInfo
+		{
+			position[]={0.29272461,1.5128441,-0.10986328};
+		};
+		id=45;
+		type="ModuleShowHide_F";
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="ModuleShowHide_F_Units";
+				expression="_this setVariable ['Units',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="1";
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="ModuleShowHide_F_State";
+				expression="_this setVariable ['State',_value,true];";
+				class Value
+				{
+					class data
+					{
+						singleType="STRING";
+						value="1";
+					};
+				};
+			};
+			nAttributes=2;
+		};
+	};
+	class Item7
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={0.4465332,1.8347778,-0.37597656};
+			angles[]={0.16596335,0,0.06075491};
+		};
+		side="Empty";
+		flags=4;
+		class Attributes
+		{
+		};
+		id=46;
+		type="Item_FlashDisk";
+		atlOffset=0.00047302246;
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="hideObject";
+				expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
+				class Value
+				{
+					class data
+					{
+						singleType="BOOL";
+						value=1;
+					};
+				};
+			};
+			nAttributes=1;
+		};
+	};
+};
+class connections
+{
+	class LinkIDProvider
+	{
+		nextID=4;
+	};
+	class Links
+	{
+		items=4;
+		class Item0
+		{
+			linkID=0;
+			item0=41;
+			item1=40;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item1
+		{
+			linkID=1;
+			item0=44;
+			item1=41;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item2
+		{
+			linkID=2;
+			item0=45;
+			item1=41;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+		class Item3
+		{
+			linkID=3;
+			item0=45;
+			item1=46;
+			class CustomData
+			{
+				type="Sync";
+			};
+		};
+	};
+};
