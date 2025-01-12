@@ -7,5 +7,6 @@ requiredAddons[]=
 	"A3_Structures_F_Mil_Flags",
 	"A3_Props_F_Enoch_Military_Equipment",
 	"A3_Structures_F_Civ_Accessories",
-	"ace_ballistics"
+	"ace_ballistics",
+	"A3_Structures_F_Heli_Ind_Machines"
 };
